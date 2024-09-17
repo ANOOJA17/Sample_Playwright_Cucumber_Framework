@@ -17,6 +17,7 @@ Given('I access the url {string} and go to the Sign in page', async function (ur
 });
 
 When('I enter Username {string} and the Password {string} and submit the form', async function (email, password) {
+    // Step to the login page
     await page.getByPlaceholder('Email').fill(email);
     await page.getByPlaceholder('Password').fill(password);
     await page.getByRole('button').click();
