@@ -19,7 +19,6 @@ Given('I import {string} file', async function (filename) {
 });
 
 When('I mock {string} api response', async function (apiURL) {
-    //Mock API response
     await page.route(apiURL, async route => {
         await route.fulfill({
             body: JSON.stringify(data)
@@ -28,7 +27,6 @@ When('I mock {string} api response', async function (apiURL) {
 });
 
 When('I modify {string} api response', async function (apiURL) {
-    //Modify API response
     await page.route(apiURL, async route => {
         const res = await route.fetch();
         const resbody = await res.json();
